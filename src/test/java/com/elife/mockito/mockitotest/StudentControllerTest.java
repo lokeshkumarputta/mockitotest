@@ -52,8 +52,7 @@ public class StudentControllerTest {
 
 		// {"id":"Course1","name":"Spring","description":"10 Steps, 25 Examples and 10K Students","steps":["Learn Maven","Import Project","First Example","Second Example"]}
 
-		JSONAssert.assertEquals(expected, result.getResponse()
-				.getContentAsString(), false);
+		JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
 	}
 
 	@Test
