@@ -12,13 +12,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@Api(value = "studentController")
 public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
 
 	@GetMapping("/students/{studentId}/courses")
+	@ApiOperation(value = "post operation")
 	public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
 		return studentService.retrieveCourses(studentId);
 	}
